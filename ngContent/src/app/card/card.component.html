@@ -1,0 +1,28 @@
+<div class="card">
+  <ng-content selcet=".title"></ng-content>
+
+  <p class="summary">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ipsa?
+  </p>
+
+  <ng-content select=".btn-more"></ng-content>
+
+</div>
+
+<hr>
+<div *ngFor="let item of number">
+<ng-container *ngIf="item % 2 == 1 else elseShow">{{item}}</ng-container>
+</div>
+
+<hr>
+<ng-template [ngIf]="true">ng template</ng-template>
+
+<div *ngIf="true else elseBlock">Condition is true</div>
+<ng-template #elseBlock>
+  <div>Condition is false</div>
+</ng-template>
+<ng-template #elseShow>
+  □
+</ng-template>
+
+
